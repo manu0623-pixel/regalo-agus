@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>Feliz Cumple Agus 🎂</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📌</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="board-frame">
+  <div class="corkboard" id="corkboard">
+
+    <!-- INTRO SCREEN -->
+    <section class="screen" id="screen-intro">
+      <div class="tape tape-1"></div>
+      <div class="polaroid intro-photo" style="--rot:-6deg">
+        <div class="photo-slot" data-media-type="image" data-media-src="assets/images/portada.jpg" data-placeholder-text="Foto de portada"></div>
+        <p class="polaroid-caption">nosotras :)</p>
+      </div>
+      <h1 class="pin-title"><span class="pin">📌</span>Feliz Cumple<br><span id="friend-name-title">Agus</span></h1>
+      <p class="intro-text">Te armé algo para guardar para siempre. Pero antes tenés que jugar un poco...</p>
+      <button class="cork-btn" id="btn-start">Empezar la aventura ➜</button>
+    </section>
+
+    <!-- GAME SCREEN (2D platformer) -->
+    <section class="screen game-screen hidden" id="screen-game">
+      <div class="game-hud">
+        <button class="hud-btn" id="btn-game-exit">← salir</button>
+        <div class="gem-counter" id="gem-counter">💎 0</div>
+      </div>
+      <div class="game-viewport" id="game-viewport">
+        <div class="game-world" id="game-world"></div>
+      </div>
+      <div class="game-controls">
+        <button class="jump-big-btn" id="btn-jump" aria-label="saltar">⤒ SALTAR</button>
+      </div>
+
+      <!-- reward popup overlay -->
+      <div class="reward-overlay hidden" id="reward-overlay">
+        <div class="reward-overlay-inner" id="reward-overlay-inner">
+          <div class="polaroid reward-photo" id="reward-media-wrap" style="--rot:-3deg">
+            <div class="photo-slot" id="reward-media"></div>
+            <p class="polaroid-caption" id="reward-caption"></p>
+          </div>
+          <p class="reward-message" id="reward-message"></p>
+          <button class="cork-btn" id="btn-reward-continue">Seguir caminando ➜</button>
+        </div>
+      </div>
+
+      <!-- lose overlay -->
+      <div class="lose-overlay hidden" id="lose-overlay">
+        <div class="lose-emoji">😅</div>
+        <h2 class="lose-heading">¡Perdiste!</h2>
+        <p class="lose-message" id="lose-message">Te caíste del camino. Los recuerdos que ya desbloqueaste siguen guardados.</p>
+        <button class="cork-btn" id="btn-lose-retry">Reintentar ➜</button>
+      </div>
+
+      <!-- pantalla previa: se ve antes de que el personaje arranque a correr -->
+      <div class="howto-overlay hidden" id="howto-overlay">
+        <div class="howto-icon" id="howto-icon">
+          <img id="howto-icon-img" alt="">
+          <span id="howto-icon-fallback">🏃</span>
+        </div>
+        <p class="howto-text">Ayuda al Porrito a llegar al final y así desbloquear todos los recuerdos</p>
+        <button class="cork-btn" id="btn-howto-start">¡Vamos! ➜</button>
+      </div>
+    </section>
+
+    <!-- FINALE / KEEPSAKE SCREEN -->
+    <section class="screen hidden" id="screen-finale">
+      <div class="tape tape-1"></div>
+      <h2 class="board-heading" id="keepsake-heading">Tu corcho de recuerdos</h2>
+      <p class="board-subheading" id="keepsake-subheading">Todo lo que fuiste desbloqueando queda clavado acá para siempre</p>
+      <div class="keepsake-grid" id="keepsake-grid"></div>
+      <div class="finale-final-message hidden" id="finale-final-message"></div>
+      <button class="cork-btn ghost-btn" id="btn-finale-replay">← volver a jugar</button>
+    </section>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
